@@ -12,3 +12,11 @@ desc "Run tests with format: html"
 task :thtml do
   sh "rspec racional_spec.rb --format html"
 end
+
+
+##############
+require 'rspec/core/rake_task'
+RSpec::Core::RakeTask.new
+task :default => :spec
+
+$:.unshift File.dirname(__FILE__) + 'lib'

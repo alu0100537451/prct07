@@ -1,4 +1,10 @@
-desc "Run lib/frac_main.rb"
+$:.unshift File.dirname(__FILE__) + 'lib'
+
+require 'rspec/core/rake_task'
+RSpec::Core::RakeTask.new
+task :default => :spec
+
+desc "Run frac_main.rb"
 task :bin do
   sh "ruby -Ilib frac_main.rb"
 end
@@ -15,8 +21,4 @@ end
 
 
 ##############
-require 'rspec/core/rake_task'
-RSpec::Core::RakeTask.new
-task :default => :spec
 
-$:.unshift File.dirname(__FILE__) + 'lib'

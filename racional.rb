@@ -112,8 +112,13 @@ class Racional
 		negado = Racional.new(-denominador, numerador)
 	end
 
-##########
-
+##########Calcular mayor menor o igual
+	def <=> (other)
+		if other.instance_of? Racional
+			return (numerador.to_f/denominador)<=>(other.numerador.to_f/other.denominador)
+		else
+			false
+	end
        
 end
 end
